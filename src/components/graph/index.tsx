@@ -31,13 +31,16 @@ export const Graph: React.FC<GraphProps> = (props) => {
   const [showLabels, setShowLabels] = useState(false);
   const [linkWidth, setLinkWidth] = useState(1);
 
+  const initialZoomLevel = 20 / Math.pow((props.data?.nodes.length || 1 )/5, 1/2);
+  console.log(initialZoomLevel)
+
   useEffect(() => {
     if (!cosmograph.current || !props.data) return;
 
     const graph = cosmograph.current;
     graph.unselectNodes();
     setIsPlaying(true);
-    graph.setZoomLevel(cosmographBaseConfig.initialZoomLevel as number)
+    graph.setZoomLevel(initialZoomLevel as number)
 
     if (props.disableAutoFitView) {
       graph.setZoomLevel(1)
@@ -48,7 +51,7 @@ export const Graph: React.FC<GraphProps> = (props) => {
       if (props.fitViewNodeIds?.length) {
         graph.fitViewByNodeIds(props.fitViewNodeIds, 1500);
       } else {
-        graph.fitView(2500);
+        graph.fitView(1500);
       }
     }, 1500);
   }, [props.data, cosmograph.current]);
@@ -115,6 +118,7 @@ export const Graph: React.FC<GraphProps> = (props) => {
           linkArrowsSizeScale={linkWidth * (cosmographBaseConfig.linkArrowsSizeScale ?? 1)}
           ref={cosmograph}
           {...props}
+          initialZoomLevel={initialZoomLevel}
           onClick={onNodeClick}
           onLabelClick={onNodeClick}
           onZoom={handleZoomEnd}

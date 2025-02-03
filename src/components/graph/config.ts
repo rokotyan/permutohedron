@@ -3,11 +3,11 @@ import { GraphLink, GraphNode } from "@/utils/data";
 
 export const cosmographBaseConfig: CosmographInputConfig<GraphNode, GraphLink> = {
     backgroundColor: "#fff",
-    simulationDecay: 50000,
-    simulationFriction: 0.85,
+    simulationDecay: 100000,
+    simulationFriction: 0.95,
     simulationLinkDistance: 5,
     simulationLinkSpring: 0.3,
-    simulationGravity: 0.5,
+    simulationGravity: 0.2,
     simulationRepulsion: 2,
     linkVisibilityMinTransparency: 0.5,
     linkArrowsSizeScale: 0.5,
