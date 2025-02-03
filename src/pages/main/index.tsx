@@ -55,14 +55,15 @@ export const MainPage: React.FC = () => {
       <div className={`${s.datasets} ${mounted ? s.visible : ''}`}>
         {files.map((filename, i, arr) => (
           <span key={filename}>
-            <NavLink to={`/${filename}`}>{filename}</NavLink>
+            <NavLink to={`/${filename}`}>{
+              datasetJson[filename as keyof typeof datasetJson]
+            }</NavLink>
             {i < arr.length - 1 && <span style={{padding: 2}}>{' | '}</span>}
           </span>
         ))}
       </div>
       <div className={`${s.datasetLabel} ${s.visible}`}>
         {datasetJson[dataset as keyof typeof datasetJson] || dataset} {mounted ? '' : '⏳'}
-
       </div>
     </div>
   );
