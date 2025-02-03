@@ -1,0 +1,22 @@
+diff --git a/node_modules/@cosmograph/cosmos/dist/index.js b/node_modules/@cosmograph/cosmos/dist/index.js
+index 5c19eed..8447481 100644
+--- a/node_modules/@cosmograph/cosmos/dist/index.js
++++ b/node_modules/@cosmograph/cosmos/dist/index.js
+@@ -2282,7 +2282,7 @@ class Zoom {
+             .scaleExtent([0.001, Infinity])
+             .on('start', (e) => {
+             var _a, _b, _c;
+-            this.isRunning = true;
++            //this.isRunning = true;
+             const userDriven = !!e.sourceEvent;
+             (_c = (_b = (_a = this.config) === null || _a === void 0 ? void 0 : _a.events) === null || _b === void 0 ? void 0 : _b.onZoomStart) === null || _c === void 0 ? void 0 : _c.call(_b, e, userDriven);
+         })
+@@ -2303,7 +2303,7 @@ class Zoom {
+         })
+             .on('end', (e) => {
+             var _a, _b, _c;
+-            this.isRunning = false;
++            //this.isRunning = false;
+             const userDriven = !!e.sourceEvent;
+             (_c = (_b = (_a = this.config) === null || _a === void 0 ? void 0 : _a.events) === null || _b === void 0 ? void 0 : _b.onZoomEnd) === null || _c === void 0 ? void 0 : _c.call(_b, e, userDriven);
+         });

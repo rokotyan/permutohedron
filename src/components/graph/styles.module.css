@@ -1,0 +1,13 @@
+.graph {
+}
+
+.graph svg {
+  opacity: 0;
+}
+
+.playPauseButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}

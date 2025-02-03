@@ -1,0 +1,11 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+:root .css-label--label {
+  color: white;
+  font-weight: 400;
+  line-height: 1;
+  padding: 4px 6px !important;
+}
